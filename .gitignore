@@ -1,0 +1,16 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Python template
+# Byte-compiled / optimized / DLL files...
+__pycache__/
+
+# where google map api_key is
+.env
+
+# Environments
+.venv
+env/
+venv/
+
+
+
+

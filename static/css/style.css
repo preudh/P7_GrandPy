@@ -1,0 +1,69 @@
+/* Contains input value, address, wiki article and google map*/
+#container{
+    margin: 5%;
+    padding: 5%;
+    border: 5px solid #2c3e50;
+    display: none;
+}
+
+/* Display the address given by google, To select an element with a specific id, write a hash (#) character,
+followed by the id of the element.*/
+#address{
+    display: table;
+    background-color: #f1f1f1;
+    margin: 60px 10px 10px 10px;
+    padding: 5px;
+    text-align: left;
+    border: 2px solid #dedede;
+    border-radius: 5px;
+}
+
+/* Display wikipedia summary */
+#wiki{
+    display: table;
+    background-color: #f1f1f1;
+    margin: 10px;
+    padding: 5px;
+    text-align: left;
+    border: 2px solid #dedede;
+    border-radius: 5px;
+}
+
+#spinner {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    display: none;
+}
+
+/* Display the Google map */
+#map{
+    margin: 1%;
+    height: 300px;
+}
+
+/* Display user's request */
+#input_value{
+    float: right;
+    background-color: #ddd;
+    border: 2px solid #dedede;
+    border-radius: 5px;
+    margin: 10px;
+    min-height: 18px;
+    min-width: 100px;
+    padding: 5px;
+    text-align: left;
+
+}
+body {
+    background-color:darkseagreen;
+}
+
+.footer {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  background-color: #2c3e50;
+  color: #fff;
+  position: relative;
+}
+
