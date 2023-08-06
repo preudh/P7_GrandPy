@@ -1,3 +1,6 @@
+import os
+from dotenv import load_dotenv
+
 """Gets maps from google API with user message parsed"""
 from pprint import pprint  # function to facilitate reading of geocode response (json format)
 
@@ -15,8 +18,9 @@ class MapRequests :
     {'address': "Place d'Armes, 78000 Versailles, France", "latitude": 48.8048649, "longitude": 2.1203554}
     """
 
-    def __init__(self, API_KEY_BACK, msg_parsed):
-        self.api_key= API_KEY_BACK
+    # API from environment variables
+    def __init__(self, msg_parsed):
+        self.api_key = os.environ.get('API_KEY_BACK')
         self.msg_parsed = msg_parsed
 
     def get_position(self):
@@ -25,7 +29,7 @@ class MapRequests :
         map_client=googlemaps.Client(key=self.api_key)
         # Geocoding is the process of converting addresses into geographic coordinates (like latitude and longitude )
         # A Geocoding request with region="fr" (France) will return a french city.
-        response=map_client.geocode(self.msg_parsed, region='fr')
+        response = map_client.geocode(self.msg_parsed, region='fr')
         pprint(response)
 
         try:
