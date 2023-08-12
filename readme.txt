@@ -1,53 +1,49 @@
-# Name
-- Project 7 - GrandpyBot
+# GrandpyBot - Project 7
 
-# Description
-Web application developed during the training for Python developer with OpenClassrooms school 100% on line.
-Web application to find the address of a place specified by the input user message and gives map and summary of
-the venue. Input message user is parsed. Interactions in AJAX: the user sends his question by pressing enter and the
-answer is displayed directly on the screen, without reloading the page. the Google Maps API and the Media Wiki API are
-used. Nothing is saved. If the user reloads the page, all history is lost. Several different answers from GrandPyBot are
-made.
+## Description
 
+Web application developed during the Python developer training with OpenClassrooms. This application allows users to find the address of a place by inputting a message. It then displays a map and a summary of the location. The user's message is parsed to extract key information. Interactions are executed via AJAX: users submit their question by pressing "Enter", and the response is displayed directly on the screen without a reload. The Google Maps API and the Media Wiki API are leveraged to fetch the data. Nothing is saved. If users refresh the page, the entire history is lost. GrandPyBot has a range of diverse response phrases to make the interaction dynamic and engaging.
 
-# Utilisation
-The project is deployed on heroku : https://........
-Otherwise, fork this repository then clone it in your local directory.
-Install the requirements to be able to use the installed packages.
-Finally; to start the project, use the command main.py and used your own API_KEY Google Map.
+## Usage
 
+The project is deployed on Heroku: [Heroku Deployment](https://p7grandpy-811172f837bb.herokuapp.com/)
 
-Guides and resources:
-- Back-end
-https://flask.palletsprojects.com/en/1.1.x/
+For local usage:
+1. Fork and clone this repository.
+2. Install the dependencies using `pip install -r requirements.txt`.
+3. Launch the project with `python main.py` (remember to configure your Google Map API key).
 
-- TestDrivenDevelopment
-https://martinfowler.com/bliki/TestDrivenDevelopment.html
-https://docs.python.org/fr/3.7/library/unittest.html
+## Resources and Guides:
 
-- Front-end
-https://getbootstrap.com/docs/5.0/getting-started/introduction/
-https://www.w3schools.com/js/js_intro.asp
-https://www.w3schools.com/xml/ajax_intro.asp
-Making a basic AJAX request with Flask : https://gist.github.com/MalphasWats/3031823
-https://www.w3schools.com/html/default.asp
-https://www.w3schools.com/css/default.asp
+### Back-end
+- [Flask Documentation](https://flask.palletsprojects.com/en/1.1.x/)
+- **Test-Driven Development (TDD)**
+  - [TestDrivenDevelopment by Martin Fowler](https://martinfowler.com/bliki/TestDrivenDevelopment.html)
+  - [Unittest - Official Python Documentation](https://docs.python.org/fr/3.7/library/unittest.html)
 
-- API
-https://developers.google.com/maps/documentation
-https://github.com/googlemaps/google-maps-services-python
-https://pypi.org/project/wikipedia/
+### Front-end
+- [Bootstrap - Introduction](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+- [JavaScript Introduction - W3Schools](https://www.w3schools.com/js/js_intro.asp)
+- [AJAX Introduction - W3Schools](https://www.w3schools.com/xml/ajax_intro.asp)
+- [HTML Introduction - W3Schools](https://www.w3schools.com/html/default.asp)
+- [CSS Introduction - W3Schools](https://www.w3schools.com/css/default.asp)
 
-- Deployment
-https://devcenter.heroku.com/articles/getting-started-with-python
+### API
+- [Google Maps API Documentation](https://developers.google.com/maps/documentation)
+- [google-maps-services-python on GitHub](https://github.com/googlemaps/google-maps-services-python)
+- [Wikipedia Python Package](https://pypi.org/project/wikipedia/)
 
-# Support
-preudhomme.patrice@gmail.com
+### Deployment
+- [Getting started with Python on Heroku](https://devcenter.heroku.com/articles/getting-started-with-python)
 
-# Roadmap:
-- Trello :.....
-- Ideas for releases in the future, the Chatbot includes the NLP capabilities that can easily recognise the purpose of
-the queries and help the customer accordingly. The Chatbot can store the data.
+## Support
+
+For any questions or support, please contact me at: preudhomme.patrice@gmail.com
+
+## Roadmap:
+
+In future releases, the Chatbot could integrate Natural Language Processing (NLP) capabilities to better recognize the intent behind queries and assist users accordingly. Additionally, there's potential for data storage to refine and improve interactions.
+
 
 
 
