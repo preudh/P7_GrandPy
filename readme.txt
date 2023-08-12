@@ -8,6 +8,8 @@ Web application developed during the Python developer training with OpenClassroo
 
 The project is deployed on Heroku: [Heroku Deployment](https://p7grandpy-811172f837bb.herokuapp.com/)
 
+For instance, you can try typing in "Château de Versailles" to see how the application responds.
+
 For local usage:
 1. Fork and clone this repository.
 2. Install the dependencies using `pip install -r requirements.txt`.
@@ -43,7 +45,3 @@ For any questions or support, please contact me at: preudhomme.patrice@gmail.com
 ## Roadmap:
 
 In future releases, the Chatbot could integrate Natural Language Processing (NLP) capabilities to better recognize the intent behind queries and assist users accordingly. Additionally, there's potential for data storage to refine and improve interactions.
-
-
-
-
