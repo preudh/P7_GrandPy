@@ -1,27 +1,52 @@
-from unittest import TestCase
-from unittest.mock import patch  # import of patch decorator from unittest module
-
-from config import API_KEY
-
+import unittest
+from unittest.mock import patch, Mock
 from Flask_api.map import MapRequests
 
 
-class TestMapRequests(TestCase):
-    @patch('Flask_api.map.MapRequests.get_position')  # We set up the decorator that takes the object
-    # to mock as argument
-    def test_get_position(self, mock_get_position_from_api):
-        # The decorator injects the mocker object into the
-        # function as an argument to the method. The argument name is free of choice. return_value method is used to
-        # associate the desired return value with the mock.
+class TestMapRequests(unittest.TestCase):
+
+    @patch('Flask_api.map.googlemaps.Client')  # We mock the Client class
+    def test_get_position_valid_response(self, MockClient):
+        # Creating a mock response, similar to what Google Maps API might return
+        mock_response = [{
+            "formatted_address": "Place d'Armes, 78000 Versailles, France",
+            "geometry": {
+                "location": {
+                    "lat": 48.8048649,
+                    "lng": 2.1203554
+                }
+            }
+        }]
+
+        # Setting the mock to return the mock response when the geocode method is called
+        mock_instance = MockClient.return_value
+        mock_instance.geocode.return_value = mock_response
+
+        # Executing the method to test
+        map_request = MapRequests("le chateau versailles")
+        result = map_request.get_position()
+
+        # Verifying that the method processes the mock response correctly
         expected_result = {
             "address": "Place d'Armes, 78000 Versailles, France",
             "latitude": 48.8048649,
             "longitude": 2.1203554
         }
+        self.assertEqual(result, expected_result)
 
-        print(type(expected_result))
-        mock_get_position_from_api.return_value = expected_result
-        position_proposed = MapRequests(API_KEY, "le chateau versailles")
-        # We use the assertEqual method of the TestCase class to compare the value returned by the method we are
-        # testing with the expected result
-        self.assertEqual(position_proposed.get_position(), expected_result)
+    @patch('Flask_api.map.googlemaps.Client')
+    def test_get_position_no_result(self, MockClient):
+        # Setting the mock to return an empty list (which would simulate a response with no results)
+        mock_instance = MockClient.return_value
+        mock_instance.geocode.return_value = []
+
+        # Executing the method to test
+        map_request = MapRequests("nonexistent address")
+        result = map_request.get_position()
+
+        # Verifying that the method returns "no result" if the response is empty
+        self.assertEqual(result, "no result")
+
+
+if __name__ == "__main__":
+    unittest.main()
