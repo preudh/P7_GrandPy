@@ -33,7 +33,8 @@ def ajax_request():
     # instantiation of Parser class
     response=Parser(msg_received, stopwords, control_characters).process_parser()
     # instantiation of MapRequests class and used of get_position method
-    ggmap=MapRequests(API_KEY_BACK, response).get_position()
+    # ggmap=MapRequests(API_KEY_BACK, response).get_position()
+    ggmap=MapRequests(response).get_position()
     # random sentences from papybot
     sentences=random_chat()
     # instantiation of Wiki

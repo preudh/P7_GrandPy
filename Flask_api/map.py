@@ -5,7 +5,8 @@ from dotenv import load_dotenv
 from pprint import pprint  # function to facilitate reading of geocode response (json format)
 
 import googlemaps  # Python client library for Google Maps Platform
-
+from dotenv import load_dotenv
+load_dotenv() # take environment variables from .env.
 
 # """Performs requests to the Google Maps Geocoding API."""
 # from googlemaps import convert
